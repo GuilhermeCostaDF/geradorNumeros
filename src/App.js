@@ -10,8 +10,8 @@ const App = () => {
 
     return(
         <SafeAreaView style={styles.container}>
-            <Text>Olá, mundão!</Text>
-            <TouchableOpacity >
+            <Text style={styles.numero}>0</Text>
+            <TouchableOpacity style={styles.botao}>
                 <Text>Gerar Número</Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -27,6 +27,19 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+
+    numero: {
+        fontSize: 40,
+        color: 'white',
+        fontWeight: "bold",
+    },
+
+    botao: {
+        backgroundColor: 'white',
+        width: 200,
+        paddingHorizontal: 10,
+        paddingVertical: 25,
+    }
 
 });
 
