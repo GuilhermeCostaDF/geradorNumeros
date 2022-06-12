@@ -4,6 +4,7 @@ import {
     Text,
     TouchableOpacity,
     StyleSheet,
+    View
 } from 'react-native';
 
 
@@ -18,10 +19,24 @@ const App = () => {
 
     return(
         <SafeAreaView style={styles.container}>
+
             <Text style={styles.numero}>{numero}</Text>
-            <TouchableOpacity onPress={handleNumero} style={styles.botao}>
-                <Text style={styles.textoBotao}>Gerar Número</Text>
-            </TouchableOpacity>
+
+            <View style={styles.containerBotoes}>
+
+                <TouchableOpacity onPress={ () => setNumero( numero - 1 ) } style={styles.incrementDecrementBtn}>
+                    <Text style={styles.textoBotao}>-</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handleNumero} style={styles.botao}>
+                    <Text style={styles.textoBotao}>Gerar Número</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress= { () => setNumero( numero + 1 ) } style={styles.incrementDecrementBtn}>
+                    <Text style={styles.textoBotao}>+</Text>
+                </TouchableOpacity>
+            </View>
+
         </SafeAreaView>
     );
 
@@ -45,8 +60,8 @@ const styles = StyleSheet.create({
 
     botao: {
         backgroundColor: '#ff8906',
-        paddingHorizontal: 20,
-        paddingVertical: 28,
+        paddingHorizontal: 18,
+        paddingVertical: 24,
         borderRadius: 35,
     },
 
@@ -54,6 +69,19 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight:'bold',
         color: '#fffffe',
+    },
+
+    containerBotoes: {
+        width: '80%',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
+
+    incrementDecrementBtn: {
+        backgroundColor: '#e53170',
+        paddingHorizontal: 18,
+        paddingVertical: 20,
+        borderRadius: 10,
     }
 
 });
