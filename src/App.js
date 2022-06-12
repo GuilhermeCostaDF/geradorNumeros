@@ -11,7 +11,7 @@ const App = () => {
 
     const [numero, setNumero] = useState(0);
 
-    function handleNumero(){
+    const  handleNumero = () => {
         const novo_numero = Math.floor(Math.random() * 100);
         setNumero(novo_numero);
     }
@@ -20,7 +20,7 @@ const App = () => {
         <SafeAreaView style={styles.container}>
             <Text style={styles.numero}>{numero}</Text>
             <TouchableOpacity onPress={handleNumero} style={styles.botao}>
-                <Text>Gerar Número</Text>
+                <Text style={styles.textoBotao}>Gerar Número</Text>
             </TouchableOpacity>
         </SafeAreaView>
     );
@@ -29,7 +29,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
+        backgroundColor: '#0f0e17',
         fontSize: 24,
         flex: 1,
         justifyContent: "center",
@@ -37,16 +37,23 @@ const styles = StyleSheet.create({
     },
 
     numero: {
-        fontSize: 40,
+        fontSize: 50,
         color: 'white',
         fontWeight: "bold",
+        marginBottom:40,
     },
 
     botao: {
-        backgroundColor: 'white',
-        width: 200,
-        paddingHorizontal: 10,
-        paddingVertical: 25,
+        backgroundColor: '#ff8906',
+        paddingHorizontal: 20,
+        paddingVertical: 28,
+        borderRadius: 35,
+    },
+
+    textoBotao: {
+        fontSize: 18,
+        fontWeight:'bold',
+        color: '#fffffe',
     }
 
 });
